@@ -11,9 +11,9 @@
       speech.voice = voices[5];
       let recognition = new window.speechRecognition;
       recognition.interimResults = true;
-      let chatBox = document.querySelector('.chatBox') || document.getElementById('chatBox');
+      let chatBox = document.getElementById('chatBox');
       let p = document.createElement('p');
-      let firstnote = document.querySelector('.fn') || document.getElementById('fn');
+      let firstnote = document.getElementById('fn');
       speech.text = firstnote.innerHTML;
       window.speechSynthesis.speak(speech);
       recognition.addEventListener("result", (e)=>{
@@ -111,20 +111,20 @@
       });
       recognition.start();
     </script>
-    <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div id="root" class="flex flex-col items-center justify-center text-center  bg-black">
-      <div className="w-[90vw] md:w-[40vw] bg-black mx-auto flex flex-col gap-[20px] justify-center">
-        <h1 className="w-[100%] text-[3em] flex flex-col mx-auto text-white md:primary-color">Speech Recognition</h1>
-        <h2 className="text-gray-600">Available in Chrome only</h2>
-        <div id="chatBox" className="chatBox w-[100%] flex flex-col justify-center gap-[20px]"> 
-            <p id="fn" className="fn bg-secondary-color reply">Hello there, welcome here is a list of command that i understand more command would be added as time goes on and you are free to suggest a command for my creator, To know more about him say the command "Open Portfolio".
+    <div id="root">
+      <div class="container">
+        <h1 class="title">Speech Recognition</h1>
+        <h2 style="color: gray;">Available in Chrome only</h2>
+        <div id="chatBox"> 
+            <p id="fn" class="reply">Hello there, welcome here is a list of command that i understand more command would be added as time goes on and you are free to suggest a command for my creator, To know more about him say the command Open Portfolio.
             <ul>
                 <li>Hi</li>
                 <li>Who created you</li>
                 <li>Open portfolio</li>
-                <li>Open "WEBISTE" e.g open google</li>
+                <li>Open WEBISTE e.g open google</li>
             </ul>
             </p>
         </div>

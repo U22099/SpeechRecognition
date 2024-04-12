@@ -55,7 +55,16 @@ if(textx.includes("i'm fine and you?")||textx.includes("how are you")||textx.inc
             speech.text = p.innerHTML;
             window.speechSynthesis.speak(speech);
           }
-          if(textx.includes("about daniel")||textx.includes("who is your creator")||textx.includes("who programmed you")||textx.includes("about your master")||textx.includes("creator")||textx.includes("program")||textx.includes("master")){
+         
+if(textx.includes("what is today's date")||textx.includes("today's date")||textx.includes("today date")||textx.includes("today")||textx.includes("date")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = new Date();
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+if(textx.includes("about daniel")||textx.includes("who is your creator")||textx.includes("who programmed you")||textx.includes("about your master")||textx.includes("creator")||textx.includes("program")||textx.includes("master")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "My programmer's name is Daniel, he programmed me as a dummy Ai with hard coded reply, if you want to know more about my creator say the command 'Open Portfolio'";
@@ -138,6 +147,7 @@ if(textx.includes("i'm fine and you?")||textx.includes("how are you")||textx.inc
                 <li>Hi</li>
                 <li>Who created you</li>
                 <li>Open portfolio</li>
+<li>Today's Date</li>
                 <li>Open WEBISTE e.g open google</li>
             </ul>
             </p>

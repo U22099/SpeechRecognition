@@ -31,7 +31,9 @@ body{
     cursor: pointer;
     opacity: 1;
 }
-ul,p, .reply{
+ul,
+p, 
+.reply{
     width: 60%;
     height: max-content;
     padding: 20px;
@@ -41,11 +43,8 @@ ul,p, .reply{
     text-align: left;
 	background-image: linear-gradient(to right, purple, rgb(194, 15, 45));
 }
-ul{
-	padding-left: 20px;
-	padding-right: 20px;
-}
-ul, .reply{
+ul, 
+.reply{
     width: 60%;
     margin-left: 40%;
     border-radius: 20px 20px 0px 20px;

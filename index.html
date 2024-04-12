@@ -11,11 +11,15 @@
       speech.voice = voices[5];
       let recognition = new window.speechRecognition;
       recognition.interimResults = true;
-      let chatBox = document.getElementById('chatBox');
-      let p = document.createElement('p');
+let chatBox;
+let firstnote;
+      window.onload=()=>{
+chatBox = document.getElementById('chatBox');
+      p = document.createElement('p');
       let firstnote = document.getElementById('fn');
       speech.text = firstnote.innerHTML;
       window.speechSynthesis.speak(speech);
+}
       recognition.addEventListener("result", (e)=>{
         const text = Array.from(e.results)
         .map(r => r[0])

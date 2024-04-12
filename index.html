@@ -30,8 +30,8 @@ chatBox = document.getElementById('chatBox');
         p.innerText = text;
         chatBox.appendChild(p);
         if(e.results[0].isFinal){
-          text = text.toLowerCase();
-          if(text.includes("hello")||text.includes("what's up")||text.includes("hi")){
+          let textx = text.toLowerCase();
+          if(textx.includes("hello")||textx.includes("what's up")||textx.includes("hi")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Hello there, How are you?";
@@ -39,7 +39,7 @@ chatBox = document.getElementById('chatBox');
             speech.text = p.innerHTML;
             window.speechSynthesis.speak(speech);
           }
-if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includes("and you")){
+if(textx.includes("i'm fine and you?")||textx.includes("how are you")||textx.includes("and you")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "I'm fin also";
@@ -47,7 +47,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             speech.text = p.innerHTML;
             window.speechSynthesis.speak(speech);
           }
-          if(text.includes("what is your name")||text.includes("who are you")||text.includes("what are you")||text.includes("what's your name")){
+          if(textx.includes("what is your name")||textx.includes("who are you")||textx.includes("what are you")||textx.includes("what's your name")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "My name is Alexir, a dummy chat AI programmed by Olaniyi Daniel";
@@ -55,7 +55,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             speech.text = p.innerHTML;
             window.speechSynthesis.speak(speech);
           }
-          if(text.includes("about daniel")||text.includes("who is your creator")||text.includes("who programmed you")||text.includes("about your master")){
+          if(textx.includes("about daniel")||textx.includes("who is your creator")||textx.includes("who programmed you")||textx.includes("about your master")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "My programmer's name is Daniel, he programmed me as a dummy Ai with hard coded reply, if you want to know more about my creator say the command 'Open Portfolio'";
@@ -63,7 +63,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             speech.text = p.innerHTML;
             window.speechSynthesis.speak(speech);
           }
-          if(text.includes("open porfolio")||text.includes("daniel portfolio")||text.includes("portfolio")||text.includes("your creator portfolio")){
+          if(textx.includes("open porfolio")||textx.includes("daniel portfolio")||textx.includes("portfolio")||textx.includes("your creator portfolio")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Opening Daniel's Portfolio...";
@@ -72,7 +72,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             window.speechSynthesis.speak(speech);
             window.open('https://u22099.github.io/Portfolio2/');
           }
-          if(text.includes("open google")||text.includes("google")){
+          if(textx.includes("open google")||textx.includes("google")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Opening Google...";
@@ -81,7 +81,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             window.speechSynthesis.speak(speech);
             window.open('https://google.com');
           }
-          if(text.includes("open facebook")||text.includes("facebook")){
+          if(textx.includes("open facebook")||textx.includes("facebook")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Opening Facebook...";
@@ -90,7 +90,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             window.speechSynthesis.speak(speech);
             window.open('https://facebook.com');
           }
-          if(text.includes("open youtube")||text.includes("youtube")){
+          if(textx.includes("open youtube")||textx.includes("youtube")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Opening Youtube...";
@@ -99,7 +99,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             window.speechSynthesis.speak(speech);
             window.open('https://youtube.com');
           }
-          if(text.includes("open twitter")||text.includes("twitter")){
+          if(textx.includes("open twitter")||textx.includes("twitter")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Opening Twitter...";
@@ -108,7 +108,7 @@ if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includ
             window.speechSynthesis.speak(speech);
             window.open('https://twitter.com');
           }
-          if(text.includes("open github")||text.includes("github")){
+          if(textx.includes("open github")||textx.includes("github")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Opening Github...";

@@ -30,11 +30,19 @@ chatBox = document.getElementById('chatBox');
         p.innerText = text;
         chatBox.appendChild(p);
         if(e.results[0].isFinal){
-          text.toLowerCase();
+          text = text.toLowerCase();
           if(text.includes("hello")||text.includes("what's up")||text.includes("hi")){
             p = document.createElement('p');
             p.classList.add("reply");
             p.innerText = "Hello there, How are you?";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+if(text.includes("i'm fine and you?")||text.includes("how are you")||text.includes("and you")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "I'm fin also";
             chatBox.appendChild(p);
             speech.text = p.innerHTML;
             window.speechSynthesis.speak(speech);

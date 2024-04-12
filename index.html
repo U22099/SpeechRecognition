@@ -6,14 +6,16 @@
     <title>Speech Recognition</title>
     <script>
       window.speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
-      let speech = new SpeechSynthesisUtterance;
-      let voices = window.speechSynthesis.getVoices();
-      speech.voice = voices[5];
+      let speech;
+      let voices;
       let recognition = new window.speechRecognition;
       recognition.interimResults = true;
 let chatBox;
 let firstnote;
       window.onload=()=>{
+speech = new SpeechSynthesisUtterance;
+voices = window.speechSynthesis.getVoices();
+speech.voice = voices[5];
 chatBox = document.getElementById('chatBox');
       p = document.createElement('p');
       let firstnote = document.getElementById('fn');

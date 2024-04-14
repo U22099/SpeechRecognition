@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="x-icon" href="" />
+    <title>Speech Recognition</title>
+    <script>
+      window.speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
+      let speech;
+      let voices;
+      let recognition = new window.speechRecognition;
+      recognition.interimResults = true;
+let chatBox;
+let firstnote;
+      window.onload=()=>{
+speech = new SpeechSynthesisUtterance;
+voices = window.speechSynthesis.getVoices();
+speech.voice = voices[5];
+chatBox = document.getElementById('chatBox');
+      p = document.createElement('p');
+      let firstnote = document.getElementById('fn');
+      speech.text = firstnote.innerHTML;
+      window.speechSynthesis.speak(speech);
+}
+      recognition.addEventListener("result", (e)=>{
+        const text = Array.from(e.results)
+        .map(r => r[0])
+        .map(r => r.transcript)
+        .join('');
+        p.innerText = text;
+        chatBox.appendChild(p);
+        if(e.results[0].isFinal){
+          let textx = text.toLowerCase();
+          if(textx.includes("hello")||textx.includes("what's up")||textx.includes("hi")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Hello there, How are you?";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+if(textx.includes("i'm fine and you?")||textx.includes("how are you")||textx.includes("and you")||textx.includes("fine")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "I'm fine also";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+          if(textx.includes("what is your name")||textx.includes("who are you")||textx.includes("what are you")||textx.includes("what's your name")||textx.includes("name")||textx.includes("you")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "My name is Alexir, a dummy chat AI programmed by Olaniyi Daniel";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+         
+if(textx.includes("what is today's date")||textx.includes("today's date")||textx.includes("today date")||textx.includes("today")||textx.includes("date")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = new Date();
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+if(textx.includes("about daniel")||textx.includes("who is your creator")||textx.includes("who programmed you")||textx.includes("about your master")||textx.includes("creator")||textx.includes("program")||textx.includes("master")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "My programmer's name is Daniel, he programmed me as a dummy Ai with hard coded reply, if you want to know more about my creator say the command 'Open Portfolio'";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+          }
+          if(textx.includes("open porfolio")||textx.includes("daniel portfolio")||textx.includes("portfolio")||textx.includes("your creator portfolio")||textx.includes("portfolio")||textx.includes("daniel")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Opening Daniel's Portfolio...";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+            window.open('https://u22099.github.io/Portfolio2/');
+          }
+          if(textx.includes("open google")||textx.includes("google")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Opening Google...";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+            window.open('https://google.com');
+          }
+          if(textx.includes("open facebook")||textx.includes("facebook")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Opening Facebook...";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+            window.open('https://facebook.com');
+          }
+          if(textx.includes("open youtube")||textx.includes("youtube")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Opening Youtube...";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+            window.open('https://youtube.com');
+          }
+          if(textx.includes("open twitter")||textx.includes("twitter")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Opening Twitter...";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+            window.open('https://twitter.com');
+          }
+          if(textx.includes("open github")||textx.includes("github")){
+            p = document.createElement('p');
+            p.classList.add("reply");
+            p.innerText = "Opening Github...";
+            chatBox.appendChild(p);
+            speech.text = p.innerHTML;
+            window.speechSynthesis.speak(speech);
+            window.open('https://github.com');
+          }
+          p = document.createElement('p');
+        }
+      });
+      recognition.addEventListener("end",()=>{
+        recognition.start();
+      });
+      recognition.start();
+    </script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <h1 class="title">Speech Recognition</h1>
+        <h2 style="color: gray;">Available in Chrome only</h2>
+        <div id="chatBox"> 
+            <p id="fn" class="reply">Hello there, welcome here is a list of command that i understand more command would be added as time goes on and you are free to suggest a command for my creator, To know more about him say the command Open Portfolio.
+            <ul>
+                <li>Hi</li>
+                <li>Who created you</li>
+                <li>Open portfolio</li>
+<li>Today's Date</li>
+                <li>Open WEBISTE e.g open google</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+    </div>
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
+  </body>
+</html>
